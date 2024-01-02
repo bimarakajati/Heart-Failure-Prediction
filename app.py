@@ -171,9 +171,9 @@ with tab1:
     st.dataframe(preview_df.iloc[:, 6:])
     st.write("")
 
-    result = ":violet[-]"
-
     predict_btn = st.button("**Predict**", type="primary")
+
+    result = ":violet[-]"
 
     st.write("")
     if predict_btn:
