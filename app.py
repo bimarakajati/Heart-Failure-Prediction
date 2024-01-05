@@ -16,7 +16,7 @@ smote = SMOTE(random_state=42)
 X, y = smote.fit_resample(X, y)
 
 # Memuat model dari file pickle
-model = pickle.load(open("Model/oversample_xgb.pkl", "rb"))
+model = pickle.load(open("Model/xgb_oversample.pkl", "rb"))
 
 # Memprediksi data yang sama dengan yang digunakan untuk training
 y_pred = model.predict(X)
@@ -28,10 +28,10 @@ df_final = X
 df_final["target"] = y
 
 # Mengatur konfigurasi halaman Streamlit
-st.set_page_config(page_title="Hungarian Heart Disease", page_icon=":heart:")
+st.set_page_config(page_title="Heart Failure Prediction", page_icon=":heart:")
 
 # Menampilkan judul halaman
-st.title("Hungarian Heart Disease")
+st.title("Heart Failure Prediction")
 # Menampilkan akurasi model
 st.write(
     f"**_Model's Accuracy_** :  :green[**{accuracy}**]%"
